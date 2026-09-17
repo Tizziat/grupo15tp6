@@ -53,6 +53,7 @@ public class GestionDeProductos extends javax.swing.JFrame {
 
         jLabel3.setText("Precio($)");
 
+        jcbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronica", "Ropa", "Comestible", "Farmacia", "Perfumeria" }));
         jcbCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbCategoriaActionPerformed(evt);
