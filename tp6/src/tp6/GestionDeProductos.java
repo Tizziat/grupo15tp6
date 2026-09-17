@@ -4,6 +4,9 @@
  */
 package tp6;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author tizzi
@@ -197,6 +200,31 @@ public class GestionDeProductos extends javax.swing.JFrame {
 
     private void jbAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAgregarActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel Tabla = (DefaultTableModel) jTable1.getModel();
+        
+        String Categoria = (String) jcbCategoria.getSelectedItem();
+        String Nombre = jtNombre.getText();
+        String Precio = jtPrecio.getText();
+        
+        if (Nombre.isEmpty() || Precio.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "");
+        return;
+    }
+
+    try {
+        double precio = Double.parseDouble(Precio);
+        
+        Tabla.addRow(new Object[]{Nombre, Categoria, Precio});
+
+        jtNombre.setText("");
+        jtPrecio.setText("");
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "");
+    }
+        
+        
+        
     }//GEN-LAST:event_jbAgregarActionPerformed
 
     /**
